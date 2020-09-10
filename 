@@ -1,0 +1,29 @@
+[34m5d05c85[31m (HEAD -> master) [37mrefactor: change mocking strategy - [36mEduardo Lima, [32m13 minutes ago
+[34m7b3e133[31m [37mrefactor: move EmailValidator creation to a factory helper method - [36mEduardo Lima, [32m28 minutes ago
+[34mf22965f[31m [37mrefactor: move all protocol imports to a single file - [36mEduardo Lima, [32m43 minutes ago
+[34m1edea6f[31m [37mtest: ensure SignupController returns 500  if EmailValidator throws - [36mEduardo Lima, [32m13 hours ago
+[34m5ece698[31m [37mfeat: ensure SignupController returns 500  if EmailValidator throws - [36mEduardo Lima, [32m13 hours ago
+[34mf561dc6[31m [37mtest: ensure SignupController calls EmailValidator with correct email - [36mEduardo Lima, [32m14 hours ago
+[34m3d86500[31m [37mtest: ensure signupController returns 400 if an invalid email is provided - [36mEduardo Lima, [32m15 hours ago
+[34m924c748[31m [37mfeat: ensure signupController returns 400 if an invalid email is provided - [36mEduardo Lima, [32m15 hours ago
+[34m6932398[31m [37mrefactor: move sut creation to a factory helper method - [36mEduardo Lima, [32m17 hours ago
+[34mb2ec51a[31m [37mrefactor: make signupController conforms to a protocol - [36mEduardo Lima, [32m17 hours ago
+[34m963162d[31m [37mtest: ensure SignupController return 400 if no password and passwordConfirmation is provided - [36mEduardo Lima, [32m17 hours ago
+[34m5c333f6[31m [37mfeat: ensure SignupController return 400 if no password and passwordConfirmation is provided - [36mEduardo Lima, [32m17 hours ago
+[34m8dd78ac[31m [37mrefactor: simplify code - [36mEduardo Lima, [32m18 hours ago
+[34m4bdc3cc[31m [37mrefactor: move duplicated code to a helper method - [36mEduardo Lima, [32m18 hours ago
+[34mcbaa110[31m [37mrefactor: add customized error for missing param - [36mEduardo Lima, [32m18 hours ago
+[34m03272e2[31m [37mrefactor: ensure SignupController.handle implement correct interfaces - [36mEduardo Lima, [32m18 hours ago
+[34m96a3283[31m [37mtest: ensure SignupController return 400 if no email is provided - [36mEduardo Lima, [32m18 hours ago
+[34m72385c0[31m [37mfeat: ensure SignupController return 400 if no email is provided - [36mEduardo Lima, [32m19 hours ago
+[34m536c53b[31m [37mtest: ensure SignupController return an error if no name is provided - [36mEduardo Lima, [32m19 hours ago
+[34m714eb16[31m [37mfeat: ensure SignupController return an error if no name is provided - [36mEduardo Lima, [32m19 hours ago
+[34m53b3694[31m [37mtest: ensure SignupController returns 400 if no name is provided - [36mEduardo Lima, [32m19 hours ago
+[34mb36a5f0[31m [37mfeat: ensure SignupControllerreturns 400 if no name is provided - [36mEduardo Lima, [32m19 hours ago
+[34mb08f96f[31m [37mchore: add jest to lint staged - [36mEduardo Lima, [32m7 days ago
+[34ma4f252a[31m [37mchore: add jest - [36mEduardo Lima, [32m7 days ago
+[34m650f5ac[31m [37mchore: add husky and lint staged - [36mEduardo Lima, [32m7 days ago
+[34m0505357[31m [37mchore: add eslint - [36mEduardo Lima, [32m7 days ago
+[34m50f1275[31m [37mchore: add typescript - [36mEduardo Lima, [32m7 days ago
+[34mc7beaca[31m [37mchore: add commit linter - [36mEduardo Lima, [32m7 days ago
+[34ma81e60b[31m [37mchore: add npm - [36mEduardo Lima, [32m7 days ago
