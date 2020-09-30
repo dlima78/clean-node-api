@@ -1,6 +1,10 @@
+import { Collection } from 'mongodb'
 import request from 'supertest'
 import { MongoHelper } from '../../infra/db/mongodb/helper/mongo-helper'
 import app from '../config/app'
+import { hash } from 'bcrypt'
+
+let accountCollection: Collection
 
 describe('Login Routes', () => {
   beforeAll(async () => {
@@ -11,19 +15,37 @@ describe('Login Routes', () => {
   })
 
   beforeEach(async () => {
-    const accountCollection = await MongoHelper.getCollection('account')
+    accountCollection = await MongoHelper.getCollection('accounts')
     await accountCollection.deleteMany({})
   })
 
-  describe('POST /Signup', () => {
+  describe('POST /signup', () => {
     test('should return 200 on signup', async () => {
       await request(app)
         .post('/api/signup')
         .send({
           name: 'Eduardo Lima',
           email: 'dlima78@hotmail.com',
-          password: '123456',
-          passwordConfirmation: '123456'
+          password: '123',
+          passwordConfirmation: '123'
+        })
+        .expect(200)
+    })
+  })
+
+  describe('POST /login', () => {
+    test('should return 200 on login', async () => {
+      const password = await hash('123', 12)
+      await accountCollection.insertOne({
+        name: 'Eduardo Lima',
+        email: 'dlima78@hotmail.com',
+        password
+      })
+      await request(app)
+        .post('/api/login')
+        .send({
+          email: 'dlima78@hotmail.com',
+          password: '123'
         })
         .expect(200)
     })

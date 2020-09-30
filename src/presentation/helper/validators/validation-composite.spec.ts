@@ -34,7 +34,7 @@ describe('Validation Composite', () => {
     expect(error).toEqual(new MissingParamError('field'))
   })
 
-  test('should return the first error if more than one validation fails', () => {
+  test('should return the first error if more then one validation fails', () => {
     const { sut, validationStubs } = makeSut()
     jest.spyOn(validationStubs[0], 'validate')
       .mockReturnValueOnce(new Error())
