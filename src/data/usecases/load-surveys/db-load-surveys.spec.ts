@@ -3,7 +3,7 @@ import { LoadSurveysRepository } from './db-load-surveys-protocols'
 import { DbLoadSurveys } from './db-load-surveys'
 import MockDate from 'mockdate'
 
-const makeFakeSuveys = (): SurveyModel[] => {
+const makeFakeSurveys = (): SurveyModel[] => {
   return [{
     id: 'any_id',
     question: 'any_question',
@@ -26,7 +26,7 @@ const makeFakeSuveys = (): SurveyModel[] => {
 const makeLoadSurveysRepository = (): LoadSurveysRepository => {
   class LoadSurveysRepositoryStub implements LoadSurveysRepository {
     async loadAll (): Promise<SurveyModel[]> {
-      return new Promise(resolve => resolve(makeFakeSuveys()))
+      return new Promise(resolve => resolve(makeFakeSurveys()))
     }
   }
   return new LoadSurveysRepositoryStub()
@@ -64,7 +64,7 @@ describe('DbLoadSurveys', () => {
   test('should return a list of Surveys on success', async () => {
     const { sut } = makeSut()
     const surveys = await sut.load()
-    expect(surveys).toEqual(makeFakeSuveys())
+    expect(surveys).toEqual(makeFakeSurveys())
   })
 
   test('should throw if LoadSurveyRepository throws', async () => {
