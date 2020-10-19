@@ -1,7 +1,7 @@
 import { DbAuthentication } from './db-authentication'
 import {
   AccountModel,
-  AuthenticationModel,
+  AuthenticationParams,
   LoadAccountByEmailRepository,
   HashComparer,
   Encrypter,
@@ -33,7 +33,7 @@ const makeHashComparer = (): HashComparer => {
   return new HashComparerStub()
 }
 
-const makeFakeAuthentication = (): AuthenticationModel => ({
+const makeFakeAuthentication = (): AuthenticationParams => ({
   email: 'any_email@mail.com',
   password: 'any_password'
 })
