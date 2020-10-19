@@ -1,6 +1,10 @@
+import app from '@/main/config/app'
 import request from 'supertest'
 import { MongoHelper } from '@/infra/db/mongodb/helper/mongo-helper'
-import app from '@/main/config/app'
+import { Collection } from 'mongodb'
+
+let surveyCollection: Collection
+let accountCollection: Collection
 
 describe('Survey Result Routes', () => {
   beforeAll(async () => {
@@ -8,6 +12,13 @@ describe('Survey Result Routes', () => {
   })
   afterAll(async () => {
     await MongoHelper.disconnect()
+  })
+
+  beforeEach(async () => {
+    surveyCollection = await MongoHelper.getCollection('surveys-resut')
+    await surveyCollection.deleteMany({})
+    accountCollection = await MongoHelper.getCollection('accounts')
+    await accountCollection.deleteMany({})
   })
 
   describe('PUT /surveys/:surveysId/results', () => {
