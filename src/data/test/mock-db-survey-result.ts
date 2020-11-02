@@ -8,8 +8,8 @@ import {
 
 export const mockSaveSurveyResultRepository = (): SaveSurveyResultRepository => {
   class SaveSurveyResultRepositoryStub implements SaveSurveyResultRepository {
-    async save (data: SaveSurveyResultParams): Promise<SurveyResultModel> {
-      return new Promise(resolve => (resolve(mockSurveyResultModel())))
+    async save (data: SaveSurveyResultParams): Promise<void> {
+      return Promise.resolve()
     }
   }
   return new SaveSurveyResultRepositoryStub()
