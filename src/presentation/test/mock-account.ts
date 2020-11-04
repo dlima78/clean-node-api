@@ -3,6 +3,7 @@ import {
   AddAccount,
   AddAccountParams
 } from '@/presentation/controllers/login/signup/signup-controller-protocols'
+import { AuthenticationModel } from '@/domain/models/authentication'
 import { mockAccountModel } from '@/domain/test'
 import {
   Authentication,
@@ -21,8 +22,8 @@ export const mockAddAccount = (): AddAccount => {
 
 export const mockAuthentication = (): Authentication => {
   class AuthenticationStub implements Authentication {
-    async auth (authentication: AuthenticationParams): Promise<string> {
-      return new Promise(resolve => resolve('any_token'))
+    async auth (authentication: AuthenticationParams): Promise<AuthenticationModel> {
+      return Promise.resolve({ accessToken: 'any_token', name: 'any_name' })
     }
   }
   return new AuthenticationStub()
