@@ -18,13 +18,13 @@ export const mockAddSurvey = (): AddSurvey => {
   return new AddSurveyStub()
 }
 
-export const mockLoadSurveys = (): LoadSurveys => {
-  class LoadSurveysStub implements LoadSurveys {
-    async load (): Promise<SurveyModel[]> {
-      return new Promise(resolve => resolve(mockSurveysModel()))
-    }
+export class LoadSurveysSpy implements LoadSurveys {
+  surveyModels = mockSurveysModel()
+  accountId: string
+  async load (accountId: string): Promise<SurveyModel[]> {
+    this.accountId = accountId
+    return this.surveyModels
   }
-  return new LoadSurveysStub()
 }
 
 export const mockLoadSurveyById = (): LoadSurveyById => {
